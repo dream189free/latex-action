@@ -1,12 +1,8 @@
 # latex-action
 
-[![GitHub Actions Status](https://github.com/xu-cheng/latex-action/workflows/Test%20Github%20Action/badge.svg)](https://github.com/xu-cheng/latex-action/actions)
+Forked from [xu-cheng/latex-action](https://github.com/xu-cheng/latex-action) and added some zh_CN support.
 
-GitHub Action to compile LaTeX documents.
-
-It runs in [a docker image](https://github.com/xu-cheng/latex-docker) with a full [TeXLive](https://www.tug.org/texlive/) environment installed.
-
-If you want to run arbitrary commands in a TeXLive environment, use [texlive-action](https://github.com/xu-cheng/texlive-action) instead.
+APIs are the same. The following docs are copied from the origin repo.
 
 ## Inputs
 
@@ -14,7 +10,7 @@ If you want to run arbitrary commands in a TeXLive environment, use [texlive-act
 
     The root LaTeX file to be compiled. This input is required. You can also pass multiple files as a multi-line string to compile multiple documents. For example:
     ```yaml
-    - uses: xu-cheng/latex-action@v2
+    - uses: HermitSun/latex-action@v3
       with:
         root_file: |
           file1.tex
@@ -71,7 +67,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: HermitSun/latex-action@v3
         with:
           root_file: main.tex
 ```
@@ -83,14 +79,14 @@ jobs:
 By default, this action uses pdfLaTeX. If you want to use XeLaTeX or LuaLaTeX, you can set the `latexmk_use_xelatex` or `latexmk_use_lualatex` input respectively. For example:
 
 ```yaml
-- uses: xu-cheng/latex-action@v2
+- uses: HermitSun/latex-action@v3
   with:
     root_file: main.tex
     latexmk_use_xelatex: true
 ```
 
 ```yaml
-- uses: xu-cheng/latex-action@v2
+- uses: HermitSun/latex-action@v3
   with:
     root_file: main.tex
     latexmk_use_lualatex: true
@@ -103,7 +99,7 @@ Alternatively, you could create a `.latexmkrc` file. Refer to the [`latexmk` doc
 To enable `--shell-escape`, set the `latexmk_shell_escape` input.
 
 ```yaml
-- uses: xu-cheng/latex-action@v2
+- uses: HermitSun/latex-action@v3
   with:
     root_file: main.tex
     latexmk_shell_escape: true
@@ -133,7 +129,7 @@ This is an upstream issue where `xindy.x86_64-linuxmusl` is currently missing in
 * Try to solve the problem by examining the build log.
 * Try to build the document locally.
 * You can also try to narrow the problem by creating a [minimal working example][mwe] to reproduce the problem.
-* [Open an issue](https://github.com/xu-cheng/latex-action/issues/new) if you need help. Please include a [minimal working example][mwe] to demonstrate your problem.
+* [Open an issue](https://github.com/HermitSun/latex-action/issues/new) if you need help. Please include a [minimal working example][mwe] to demonstrate your problem.
 
 [mwe]: https://tex.meta.stackexchange.com/questions/228/ive-just-been-asked-to-write-a-minimal-working-example-mwe-what-is-that
 
