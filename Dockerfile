@@ -1,4 +1,4 @@
-FROM ghcr.io/hermitsun/texlive-full:latest
+FROM ghcr.io/dream189free/texlive-full:latest
 
 COPY \
   LICENSE \

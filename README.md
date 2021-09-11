@@ -1,6 +1,6 @@
 # latex-action
 
-Forked from [xu-cheng/latex-action](https://github.com/xu-cheng/latex-action) and added some zh_CN support.
+Forked from [HermitSun/latex-action](https://github.com/HermitSun/latex-action) and added dreamclass support.
 
 APIs are the same. The following docs are copied from the origin repo.
 
@@ -10,7 +10,7 @@ APIs are the same. The following docs are copied from the origin repo.
 
     The root LaTeX file to be compiled. This input is required. You can also pass multiple files as a multi-line string to compile multiple documents. For example:
     ```yaml
-    - uses: HermitSun/latex-action@v3
+    - uses: dream189free/latex-action@v3
       with:
         root_file: |
           file1.tex
@@ -67,7 +67,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: HermitSun/latex-action@v3
+        uses: dream189free/latex-action@v3
         with:
           root_file: main.tex
 ```
@@ -79,14 +79,14 @@ jobs:
 By default, this action uses pdfLaTeX. If you want to use XeLaTeX or LuaLaTeX, you can set the `latexmk_use_xelatex` or `latexmk_use_lualatex` input respectively. For example:
 
 ```yaml
-- uses: HermitSun/latex-action@v3
+- uses: dream189free/latex-action@v3
   with:
     root_file: main.tex
     latexmk_use_xelatex: true
 ```
 
 ```yaml
-- uses: HermitSun/latex-action@v3
+- uses: dream189free/latex-action@v3
   with:
     root_file: main.tex
     latexmk_use_lualatex: true
@@ -99,7 +99,7 @@ Alternatively, you could create a `.latexmkrc` file. Refer to the [`latexmk` doc
 To enable `--shell-escape`, set the `latexmk_shell_escape` input.
 
 ```yaml
-- uses: HermitSun/latex-action@v3
+- uses: dream189free/latex-action@v3
   with:
     root_file: main.tex
     latexmk_shell_escape: true
@@ -129,7 +129,7 @@ This is an upstream issue where `xindy.x86_64-linuxmusl` is currently missing in
 * Try to solve the problem by examining the build log.
 * Try to build the document locally.
 * You can also try to narrow the problem by creating a [minimal working example][mwe] to reproduce the problem.
-* [Open an issue](https://github.com/HermitSun/latex-action/issues/new) if you need help. Please include a [minimal working example][mwe] to demonstrate your problem.
+* [Open an issue](https://github.com/dream189free/latex-action/issues/new) if you need help. Please include a [minimal working example][mwe] to demonstrate your problem.
 
 [mwe]: https://tex.meta.stackexchange.com/questions/228/ive-just-been-asked-to-write-a-minimal-working-example-mwe-what-is-that
 
